@@ -16,6 +16,7 @@ $remoteUrl = createRepo($token,$folder);
 
 if($remoteUrl != null){
     for ($i=1 ; $i<= $n; $i++){
+        echo'['.$i.']';
         makeCommit($folder);
     }
 }
@@ -31,7 +32,7 @@ function makeCommit($folder){
     fclose($file);
     
     shell_exec('cd '.$folder.' && git add . && git commit -m "commit '.rand().' "');
-    echo "\n[Make Commit]";
+    echo " - [Make Commit]\n";
 }
 
 function gitPushToRepo($folder,$username,$token,$remoteUrl){
@@ -73,7 +74,7 @@ function createRepo($token,$folder){
         echo $result['message'];
         return null;
     }else {
-        echo "[Berhasil Buat Repo Di Github]";
+        echo "[Berhasil Buat Repo Di Github]\n\n";
         return $result['clone_url'];
     }
 }

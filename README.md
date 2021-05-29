@@ -6,4 +6,5 @@ How To Run ?
 3. Fill $username = your github username
 4. FIll $token with your personal access token
 5. php run.php
+6. wait until the program end
 
